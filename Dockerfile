@@ -1,9 +1,10 @@
 # interpreted applications (PYTHON) should use /usr/src folder !!!
 FROM python:3
 
-RUN mkdir -p /usr/src/sort
-COPY . /usr/src/sort
+RUN mkdir -p /usr/src/cambia
+COPY . /usr/src/cambia
 
-WORKDIR /usr/src/sort
+WORKDIR /usr/src/cambia
+VOLUME ["/usr/src/cambia"]
 
-CMD [ "python", "./usr/src/sort/sort.py" ]
+CMD [ "python", "./sort/sort.py" ]

@@ -1,6 +1,6 @@
 import csv
 
-input_file = open("input.csv",'r')
+input_file = open("sort/input.csv",'r')
 for line in input_file.readlines():
     actual_line = line.rstrip('\n')
     input_list = actual_line.split(',')
@@ -24,6 +24,6 @@ input_list.sort(reverse=True)
     # sorted_output = my_list.sort(reverse=True)
 
 
-with open("output.csv",'w') as output_file:
+with open("sort/output.csv",'w') as output_file:
     wr = csv.writer(output_file, quoting=csv.QUOTE_NONE)
     wr.writerow(input_list)
