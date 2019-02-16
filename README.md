@@ -1,14 +1,15 @@
 # README file for Cambia sort challenge
 
-## Build docker container
+## Run application through docker
+
+Build the docker container
 
 `docker build -t python-sort .`
 
-`docker run python-sort`
+I was testing the entrypoint by running:
 
-### test entrypoint
 `docker run -it --entrypoint /bin/bash python-sort -s`
 
-### should probably do this:
+Run the docker container to execute Python code
 
-`docker run -v /Users/sophiasherman/projects/cambia-sort/:/usr/src/sort -d python-sort`
+`docker run -i -t -v ${PWD}/:/usr/src/cambia python-sort`
