@@ -15,11 +15,6 @@ Scenario: CSV file input.csv is sorted in ascending alphabetical order
 	When the sort program is run
 	Then output.csv contains "Stockholm,Oslo,London\n"
 
-Scenario: CSV file input.csv is empty
-	Given input.csv contains ""
-	When the sort program is run
-	Then output.csv contains ""
-
 Scenario: CSV file input.csv contains a newline character only
 	Given input.csv contains "\n"
 	When the sort program is run
@@ -29,3 +24,14 @@ Scenario: CSV file input.csv contains one element
 	Given input.csv contains "Stockholm\n"
 	When the sort program is run
 	Then output.csv contains "Stockholm\n"
+
+Scenario: CSV file input.csv contains more than one line
+	Given input.csv contains "Stockholm,Moscow,Sofia\n Oslo,Ukraine\n"
+	When the sort program is run
+	Then output.csv contains nothing
+	And print out a message to the console
+
+Scenario: CSV file input.csv contains a mixture of uppercase and lowercase letters
+	Given input.csv contains "london,Oslo,Stockholm,stockholm,\n"
+	When the sort program is run
+	Then output.csv contains "Stockholm,stockholm,Oslo,london\n"
