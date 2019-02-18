@@ -35,3 +35,13 @@ Scenario: CSV file input.csv contains a mixture of uppercase and lowercase lette
 	Given input.csv contains "london,Oslo,Stockholm,stockholm,\n"
 	When the sort program is run
 	Then output.csv contains "Stockholm,stockholm,Oslo,london\n"
+
+Scenario: CSV file input.csv contains a one entry
+	Given input.csv contains "London\n"
+	When the sort program is run
+	Then output.csv contains "London\n"
+
+Scenario: CSV file input.csv contains a very long line of entries
+	Given input.csv contains "Dubai,London,Stockholm,Kiev,Delhi,Brussels,Moscow,Oslo,Dublin,Paris,Frankfurt,Bucharest,Vienna,Prague,Jerusalem,Lisbon,Barcelona,Bogota,Sofia\n"
+	When the sort program is run
+	Then output.csv contains "Vienna,Stockholm,Sofia,Prague,Paris,Oslo,Moscow,London,Lisbon,Kiev,Jerusalem,Frankfurt,Dublin,Dubai,Delhi,Bucharest,Brussels,Bogota,Barcelona\n"
