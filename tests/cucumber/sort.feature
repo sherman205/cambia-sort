@@ -45,3 +45,8 @@ Scenario: CSV file input.csv contains a very long line of entries
 	Given input.csv contains "Dubai,London,Stockholm,Kiev,Delhi,Brussels,Moscow,Oslo,Dublin,Paris,Frankfurt,Bucharest,Vienna,Prague,Jerusalem,Lisbon,Barcelona,Bogota,Sofia\n"
 	When the sort program is run
 	Then output.csv contains "Vienna,Stockholm,Sofia,Prague,Paris,Oslo,Moscow,London,Lisbon,Kiev,Jerusalem,Frankfurt,Dublin,Dubai,Delhi,Bucharest,Brussels,Bogota,Barcelona\n"
+
+Scenario: CSV file input.csv contains alphanumeric characters
+	Given input.csv contains "Stockholm,Portugal,P@ris,London!,London,$tockholm\n"
+	When the sort program is run
+	Then output.csv contains "Stockholm,Portugal,P@ris,London!,London,$tockholm\n"

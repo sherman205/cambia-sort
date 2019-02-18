@@ -1,0 +1,64 @@
+===== Gherkin =====
+
+1. Explain in detail why these tests might be helpful in the future.
+
+A: These tests would help with future development and testing. Since these tests are already written, any time the codebase has to be augmented or refactored, there are always these tests to go off of as a baseline, to make sure existing functionality does not break. This also allows the programmer to write new tests, while having the existing ones as a base. It is important to write BDD tests before starting any programming because we are building a roadmap for how the code should function down the line. Since these BDD tests are designed to be human-readable, it is especially easy for someone to read these tests in the future and understand how or why the code was designed this certain way. So, these tests help preserve history as well as make room for the future.
+
+
+===== Tools =====
+
+1. In your opinion, what’s helpful about version control systems? What’s annoying about them?
+
+A: Pros: I think that version control is an amazing way to keep track of your work and how it changes. I can go back many weeks back and see what my code used to look like. This is especially helpful if I want to revert my code to a previous older version too. Git and other tools like Subversion were created to allow multiple people to work on the same code simultaneously. It is definitely helpful that git has a simple design, has strong support for non-linear development, and is able to handle very large projects. Some of my favorite features include cherry-picking and stashing. I also like that you can integrate a CI/CD pipeline into GitHub, for instance, so that it can start to run your tests if you have that set up. Ultimately, it is truly a great collaboration tool.
+
+Cons: In the beginning, version control systems may be difficult to learn. Compared to Subversion, git is especially daunting and there are so many features that come with the tool, it's definitely hard to become a git master of them all. I have improved and learned new things about git over the years, but in the beginning when I didn't know all the git tricks, it took an especially long time to get my code to a good state when there was a particularly nasty merge conflict or I accidentally committed to master (oops!).
+
+2. What are some pros and cons of using Docker to develop, test, and deploy software?
+
+A: Pros: Since Docker can be installed on Windows, Max, and Linux, it is especially helpful for programmers who work on different operating systems to use Docker as part of their development environments. It allows everyone to be on the same page. A team can build and run docker containers in seconds and have all the same packages and libraries needed for their codebase. Docker also works well in DevOps and CI/CD, since it is easy to manage these containers.
+
+Cons: I've never run into this issue, but I have heard that Docker sometimes has security risks involved. Sometimes people think that if they are working inside a container, they are safe from outside vulnerabilities. Nevertheless, docker containers are a big target for hackers, who know that a lot of people don't watch out for maintaining the security of their docker containers. I also think that perhaps Docker has more of a steeper learning curve for programmers who don't use containerization in their development process. Firstly, programmers have to gain an understanding about what containers are, and then they have to learn about moving an existing application into docker containers. That can sometimes be challenging.
+
+3. How do you choose which language to use for a given task? How did you choose the language for the programming exercise above?
+
+A: I usually choose a language that I'm comfortable and that makes sense for the task at hand. Some things to consider before starting on a task are:
+
+ - what am I building? (video game, OS, web app, mobile app, etc)
+ - what libraries will I need to use?
+ - is there a large community for the language?
+ - which language are my team members most comfortable with?
+ - speed of the application I'm building
+ - learning curve of the language
+ - security of the language
+
+ For instance, I probably wouldn't choose Python to write my own operating system (I would maybe use C or C++). Python is an interpreted language, not a compiled language, so it would run pretty slowly on the operating system I'm building.
+
+ I chose Python for this sorting challenge exercise, because I am comfortable in Python (I use it everyday) and I wouldn't have to spend a long time remembering syntax and conventions. Since the task was to build a sort function and manipulate read/write operations of CSV files, Python is great for this since it has a powerful CSV library and a built-in sort function. And finally, Python is a pretty common and simple language to read and learn. If someone didn't know Python, they could read my code and grasp it fairly quickly.
+
+
+===== Testing Methodology =====
+
+1. What’s the right role for QA in the software development process?
+
+A: A QA Engineer has a very specific and important role in the development cycle. He or she tests everything that is written by the software team before it makes it out to production. Without the proper tests in place, features and bug fixes can't and shouldn't be deployed to production. His or her task not only lies in manually testing pieces of code, but also includes configuring, writing, and updating automated tests.
+
+2. As a QA person, you have 2 weeks to prepare before your team starts writing software. What do
+you do?
+
+A: The QA person must first understand the requirements for this new piece of software. So I would first try to understand the deliverables, difficulties, and method of implementation of the project, as well as any implications to the user. I would then proceed to write BDD tests to ensure all test cases are covered. Writing BDD test cases are important because they are human-readable and can be reviewed by the product owner as well as the software team to ensure that all parties involved understand how the software will be written. I would also be in constant communication with the product team and the software team to ensure that we are all on the same page.
+
+3. When is it appropriate to use automated testing? When is it appropriate to use manual testing?
+
+A: Automated testing is better if test cases need to be run repeatedly and over a long period of time. This would not be feasible if a human is rerunning them over and over again, since this uses up a lot of time and human resources. Automated testing is also faster and more reliable, since it is not prone to human error. It is best for regression, load, and performance testing to test frequent code changes, simulation of concurrent users, and hardware sufficiency.
+
+On the other hand, manual testing is more appropriate if human observation is important, such as testing emotional response and user experience. Another use of manual testing is ad-hoc testing, where there is no testing process or documentation planned and the tester uses his or her specific insight to test the code once or twice only. In this case, it wouldn't make sense to spend time writing an entire suite of automated tests if the tester wants to test one specific scenario.
+
+4. Your dev team has just modified an existing product by adding new features and refactoring the
+code for old features. The devs claim to have written unit tests; you’re in charge of integration
+testing. Dedicated teams are handling performance and security testing, so you don’t have to. As
+is always the case in the real world, you don’t have time to test everything. What factors do you
+think about as you decide where to focus your testing efforts? How do you decide what not to
+test?
+
+A: Assuming the code passed the unit tests, my task would be to test how these certain unit tests work together as a group. I would break up this integration testing task into parts, by integrating these unit tested modules one by one until something breaks. If a bug exists in the smaller unit parts of the program, I would be able to detect it early on instead of trying to test the entire codebase altogether. I would think about testing the high priority and high risk features first and more extensively. If there are other features that don't impact the business as much and there is a time constraint, I would focus on those less.
+

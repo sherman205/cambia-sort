@@ -22,12 +22,6 @@ Scenario: Docker image is built successfully
 
 Scenario: Docker container finishes after running
 	Given the image is built successfully
-	When the user runs the container using docker run
-	Then the container will exit after completition 
-	And no errors will be outputted to the console
-
-Scenario: Docker container finishes after running
-	Given the image is built successfully
 	When the user runs the container using docker run without -v option
 	Then the container will exit after completition 
 	And no errors will be outputted to the console
