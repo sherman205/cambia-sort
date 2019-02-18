@@ -32,4 +32,4 @@ if __name__ == "__main__":
     try:
         sort_csv("sort/input.csv","sort/output.csv")
     except Exception as e:
-        print("oops you have an error here")
+        print("Oops there was an error. Make sure you specify the right path for the input file")
